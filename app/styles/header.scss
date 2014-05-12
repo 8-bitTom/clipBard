@@ -1,0 +1,36 @@
+
+
+$radius : 6px;
+
+/* Custom page header */
+.header {
+  padding-top: 10px;
+  margin-bottom: 10px;
+  background: #e5e5e5;
+  @include border-bottom-left-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0px;
+  margin-bottom: 0;
+  line-height: 32px;
+  padding-bottom: 19px;
+  padding-top: 11px;
+  font-size: 40px;
+}
+
+.headerText{
+  margin-right: 20px;
+  margin-top: 11px;
+}
+
+.headerImg{
+  height : 55px;
+  margin: 2px 10px  0px 0px;
+}
+
+.navContainer{
+  margin-top: 10px;
+}

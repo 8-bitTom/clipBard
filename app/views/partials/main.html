@@ -1,21 +1,20 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="jumbotron">
-  <h1>'Allo, 'Allo <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
+  <h1>Welcome to ClipBard</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+      <img src="images/bard.png" alt="Bard"><br>
+      A place to store and share text snippets. <span class="glyphicon glyphicon-pencil"></span>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
-
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-  </div>
+<div ng-if="clips" class="panel panel-default">
+    <div class="panel-heading">Public Clips</div>
+    <div class="panel-body">
+        <pagination total-items="pagination.totalItems" ng-model="pagination.page" items-per-page="pagination.limit"></pagination>
+        <div ng-repeat="item in clips.clips" class="ellipsisText">
+            <span class="label label-primary text-white"><span class="glyphicon glyphicon-user"></span>&nbsp;{{item.authName}}</span>
+            &nbsp;<a ng-href="/clip/{{item._id}}">{{item.title}}</a>
+        </div>
+    </div>
 </div>
-
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+<div ng-include="'partials/footer'"></div>
